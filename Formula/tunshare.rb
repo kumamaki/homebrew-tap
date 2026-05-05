@@ -1,7 +1,7 @@
 class Tunshare < Formula
   desc "macOS TUI app that shares your VPN connection over LAN via pf NAT"
-  homepage "https://github.com/Mehdi-Hp/tunshare"
-  url "https://github.com/Mehdi-Hp/tunshare/archive/refs/tags/v0.1.0.tar.gz"
+  homepage "https://github.com/kumamaki/tunshare"
+  url "https://github.com/kumamaki/tunshare/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "3f29041c547c4b4ec6655a1fe93dea5637db3850c5d11de8e23954f190a945a1"
   license "MIT"
 

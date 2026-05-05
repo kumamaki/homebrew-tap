@@ -1,18 +1,18 @@
 # homebrew-tap
 
-Homebrew tap for Mehdi-Hp tools.
+Homebrew tap for kumamaki tools.
 
 ## Installation
 
 ```bash
-brew tap Mehdi-Hp/tap
+brew tap kumamaki/tap
 ```
 
 ## Formulae
 
 | Formula | Description |
 |---------|-------------|
-| [tunshare](https://github.com/Mehdi-Hp/tunshare) | macOS TUI app that shares your VPN connection over LAN via pf NAT |
+| [tunshare](https://github.com/kumamaki/tunshare) | macOS TUI app that shares your VPN connection over LAN via pf NAT |
 
 ### tunshare
 
