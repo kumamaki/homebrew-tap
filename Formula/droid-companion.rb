@@ -1,9 +1,9 @@
 class DroidCompanion < Formula
   desc "Named multi-turn companion sessions for Factory Droid"
   homepage "https://github.com/kumamaki/droid-companion"
-  url "https://github.com/kumamaki/droid-companion/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "363e0da5676fd067b98f09e406eb495910ee1f6d54f910a344c4d54807b11295"
-  version "0.1.1"
+  url "https://github.com/kumamaki/droid-companion/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "f8ba2ffba943d067eb31db696136ade2edf755cc86baade4a446133116ffd604"
+  version "0.1.2"
   license "MIT"
   head "https://github.com/kumamaki/droid-companion.git", branch: "main"
 
@@ -21,8 +21,8 @@ class DroidCompanion < Formula
     <<~EOS
       Requires Factory Droid CLI (`droid`) on PATH with valid credentials.
 
+        droid-companion setup
         droid-companion doctor
-        droid-companion install-skill
 
       Binary name: droid-companion
       Docs: https://github.com/kumamaki/droid-companion
@@ -30,6 +30,7 @@ class DroidCompanion < Formula
   end
 
   test do
-    assert_match "0.1.1", shell_output("#{bin}/droid-companion --version")
+    assert_match version.to_s, shell_output("#{bin}/droid-companion --version")
   end
 end
+
