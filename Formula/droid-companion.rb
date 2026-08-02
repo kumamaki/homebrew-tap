@@ -7,11 +7,20 @@ class DroidCompanion < Formula
   license "MIT"
   head "https://github.com/kumamaki/droid-companion.git", branch: "main"
 
-  depends_on "oven-sh/bun/bun" => :build
-  # Runtime dependency (not a Homebrew formula): Factory `droid` CLI on PATH.
+  # Build with Bun on PATH (official install, mise, etc.). Do NOT depend on
+  # oven-sh/bun — Homebrew Tap Trust blocks third-party taps as deps.
+  # Runtime: Factory `droid` CLI on PATH (not a Homebrew formula).
 
   def install
-    system "bun", "build", "--compile", "src/companion.ts", "--outfile", "droid-companion"
+    bun = which("bun")
+    odie <<~EOS unless bun
+      bun is required to build droid-companion but was not found on PATH.
+
+        curl -fsSL https://bun.sh/install | bash
+        # or: brew install oven-sh/bun/bun   # requires: brew trust oven-sh/bun
+    EOS
+
+    system bun, "build", "--compile", "src/companion.ts", "--outfile", "droid-companion"
     bin.install "droid-companion"
     (share/"droid-companion").install "contract/contract.md"
     (share/"droid-companion").install "skill/SKILL.md" if File.exist?("skill/SKILL.md")
@@ -33,4 +42,3 @@ class DroidCompanion < Formula
     assert_match version.to_s, shell_output("#{bin}/droid-companion --version")
   end
 end
-
