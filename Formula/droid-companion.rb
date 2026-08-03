@@ -1,9 +1,9 @@
 class DroidCompanion < Formula
   desc "Named multi-turn companion sessions for Factory Droid"
   homepage "https://github.com/kumamaki/droid-companion"
-  url "https://github.com/kumamaki/droid-companion/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "f8ba2ffba943d067eb31db696136ade2edf755cc86baade4a446133116ffd604"
-  version "0.1.2"
+  url "https://github.com/kumamaki/droid-companion/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "75421c4c5c52c38c69cf4fac93530016c7d0ed9b9f5c2342ed158eeb7fb94101"
+  version "0.1.3"
   license "MIT"
   head "https://github.com/kumamaki/droid-companion.git", branch: "main"
 
