@@ -7,15 +7,21 @@ class DroidCompanion < Formula
   license "MIT"
   head "https://github.com/kumamaki/droid-companion.git", branch: "main"
 
-  # Build with Bun on PATH (official install, mise, etc.). Do NOT depend on
-  # oven-sh/bun — Homebrew Tap Trust blocks third-party taps as deps.
+  # Build with the user's Bun (official installer or any brew tap). Do NOT
+  # depend on oven-sh/bun — Homebrew Tap Trust blocks third-party taps as deps.
+  # superenv hides both the user PATH and HOMEBREW_PREFIX/bin from builds,
+  # so probe the well-known install locations directly.
   # Runtime: Factory `droid` CLI on PATH (not a Homebrew formula).
 
   def install
-    bun = which("bun")
+    bun = which("bun") || [
+      HOMEBREW_PREFIX/"bin/bun",
+      Pathname.new(Dir.home)/".bun/bin/bun",
+    ].find(&:executable?)
     odie <<~EOS unless bun
-      bun is required to build droid-companion but was not found on PATH.
+      bun is required to build droid-companion but was not found.
 
+      Install it with:
         curl -fsSL https://bun.sh/install | bash
         # or: brew install oven-sh/bun/bun   # requires: brew trust oven-sh/bun
     EOS
