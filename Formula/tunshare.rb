@@ -2,18 +2,18 @@ class Tunshare < Formula
   desc "VPN sharing TUI for macOS"
   homepage "https://github.com/kumamaki/tunshare"
   license "MIT"
-  version "0.3.0"
+  version "0.4.0"
 
   depends_on :macos
 
   on_arm do
-    url "https://github.com/kumamaki/tunshare/releases/download/v0.3.0/tunshare-0.3.0-aarch64-apple-darwin.tar.gz"
-    sha256 "159a9852bdf12ffe3541a143c92f0b100787af321897cab10ed3f7eb6de5c895"
+    url "https://github.com/kumamaki/tunshare/releases/download/v0.4.0/tunshare-0.4.0-aarch64-apple-darwin.tar.gz"
+    sha256 "c6803b71e32fc472e4763c889f1456d67961c9e5c252a260536bfabb062b14fa"
   end
 
   on_intel do
-    url "https://github.com/kumamaki/tunshare/releases/download/v0.3.0/tunshare-0.3.0-x86_64-apple-darwin.tar.gz"
-    sha256 "e1371dc40f5cb5657eb591dab6c98b5bbf3daf27e259b0be2f0cb35c44860987"
+    url "https://github.com/kumamaki/tunshare/releases/download/v0.4.0/tunshare-0.4.0-x86_64-apple-darwin.tar.gz"
+    sha256 "762f914b01f81d958393a0cf36be65d5a7789afcc301efa2b15230920095f16e"
   end
 
   def install
